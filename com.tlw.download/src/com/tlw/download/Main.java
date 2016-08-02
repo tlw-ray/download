@@ -59,23 +59,23 @@ public class Main {
 			}
 			
 			//parse task to integer and 0<task<256
-			String taskStr = cmd.getOptionValue(taskKey, "5");
-			int task = 5;
+			String taskCountStr = cmd.getOptionValue(taskKey, "5");
+			int taskCount = 5;
 			try{
-				task = Integer.parseUnsignedInt(taskStr);
-				if(task > 255){
-					task = 255;
+				taskCount = Integer.parseUnsignedInt(taskCountStr);
+				if(taskCount > 255){
+					taskCount = 255;
 				}
 			}catch(Exception e){
-				System.out.println("Miss '-task " + taskStr + "', use default '-task 5'.");
+				System.out.println("Miss '-task " + taskCountStr + "', use default '-task 5'.");
 				return;
 			}
 			String path = cmd.getOptionValue(pathKey, "");
 			File pathFile = new File(path);
 			try{
 				URL url=new URL(urlStr);
-				Task fileFetch = new Task(url, pathFile, task);
-				fileFetch.start();
+				Task task = new Task(url, pathFile, taskCount);
+				task.start();
 			}catch(Exception ex){
 				System.out.println("Http get " + urlStr + " fail: " + ex.getMessage());
 				return;
