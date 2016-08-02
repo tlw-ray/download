@@ -1,0 +1,14 @@
+<project name="com.tlw.download" default="release">
+	<target name="release">
+		<tstamp></tstamp>
+		<property name="version" value="1.0.0.v${DSTAMP}"></property>
+		<javac srcdir="src" classpath="lib/commons-cli-1.3.1.jar" source="1.6" target="1.6" destdir="bin"></javac>
+		
+		<delete dir="release" includes="*.jar"></delete>
+		<jar destfile="release/com.tlw.download.jar" basedir="bin">
+			<zipfileset src="lib/commons-cli-1.3.1.jar" excludes="META-INFO/*"></zipfileset>
+		</jar>
+		<zip destfile="release/download_${version}.zip" basedir="release" excludes="*.zip"></zip>
+		<chmod perm="755" file="*.zip"></chmod>
+	</target>
+</project>
