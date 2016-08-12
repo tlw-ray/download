@@ -23,6 +23,12 @@ example(示例):
 
 	download.bat -url http://www.softwares.com/some.zip
 	
+##Deploy(Windows下的部署说明)
+####1. 解压缩项目下release目录下最新的zip文件到某目录
+####2. 设定该目录为path路径。即添加到环境变量的path中去。
+####3. 新开任意cmd窗口，输入download即可看到使用说明输出。
+####4. cmd命令窗口内，进入任意路径通过download命令在该路径下下载文件。
+	
 ##Implemention(实现):
 
 ####1. Class(类):

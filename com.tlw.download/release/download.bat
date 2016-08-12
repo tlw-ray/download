@@ -1,1 +1,1 @@
-java -cp com.tlw.download.jar com.tlw.download.Main %1 %2 %3 %4 %5 %6
+java -cp %~dp0/com.tlw.download.jar com.tlw.download.Main %1 %2 %3 %4 %5 %6

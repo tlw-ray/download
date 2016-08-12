@@ -22,7 +22,6 @@ public class TestDownload {
 //			String urlPath = "https://s3.amazonaws.com/jruby.org/downloads/9.0.5.0/jruby-complete-9.0.5.0.jar";
 			String urlPath = "http://plugins.jetbrains.com/plugin/download?pr=&updateId=27110";
 			URL url=new URL(urlPath);
-			
 			Task fileFetch = new Task(url, new File("D:"), 5);
 			fileFetch.start();
 		} catch (Exception e) {
