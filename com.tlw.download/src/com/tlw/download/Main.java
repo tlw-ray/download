@@ -53,8 +53,8 @@ public class Main {
 			if(urlStr == null || urlStr.trim().length()==0){
 				System.out.println("Parameter -url not null.");
 				return;
-			}else if(!urlStr.toLowerCase().startsWith("http://")){
-				System.out.println("Parameter -url must start with 'http://'.");
+			}else if(!urlStr.toLowerCase().startsWith("http://") && !urlStr.toLowerCase().startsWith("https://")){
+				System.out.println("Parameter -url must start with 'http://' or 'https://'.");
 				return;
 			}
 			
